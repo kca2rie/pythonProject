@@ -483,4 +483,79 @@ print(os.listdir())
 for dirs in os.walk("test", topdown=True):
     print("Subdirs:", dirs)
 
-# Задача 2
+# 25.12.21
+# Задача 1 Реализуйте класс "Книга". Необходимо хранить в полях класса: название книги, год выпуска, издателя, жанр,
+# автора, цену. Реализуйте методы класса для ввода данных, вывода данных,реализуйте доступ к отдельным полям через методы класса.
+
+class Book:
+    name = "name"
+    year = "0000"
+    publisher = "publisher"
+    genre = "genre"
+    author = "author"
+    price = "price"
+
+    def print_info(self):
+        print(f"Название: {self.name}\nГод выпуска: {self.year}\n"
+              f"Издатель: {self.publisher}\nЖанр: {self.genre}\n"
+              f"Автор: {self.author}\nЦена: {self.price}")
+
+    def input_info(self, name, year, publisher, genre, author, price):
+        self.name = name
+        self.year = year
+        self.publisher = publisher
+        self.genre = genre
+        self.author = author
+        self.price = price
+
+    def set_name(self, name):
+        self.name = name
+
+    def get_name(self):
+        return self.name
+
+    def set_year(self, year):
+        self.year = year
+
+    def get_year(self):
+        return self.year
+
+    def set_publisher(self, publisher):
+        self.publisher = publisher
+
+    def get_publisher(self):
+        return self.publisher
+
+    def set_genre(self, genre):
+        self.genre = genre
+
+    def get_genre(self):
+        return self.genre
+
+    def set_author(self, author):
+        self.author = author
+
+    def get_author(self):
+        return self.author
+
+    def set_price(self, price):
+        self.price = price
+
+    def get_price(self):
+        return self.price
+
+h1 = Book()
+h1.input_info("Мёртвые души", "1835", "Азбука", "Поэма", "Гоголь Н.В", "252")
+h1.print_info()
+h1.set_name("")
+print(f"Имя: {h1.get_name()}")
+h1.set_year("")
+print(h1.get_year())
+h1.set_publisher("")
+print(h1.get_publisher())
+h1.set_genre("")
+print(h1.get_genre())
+h1.set_author("")
+print(h1.get_author())
+h1.set_price("")
+print(h1.get_price())
