@@ -599,3 +599,48 @@ class Sphere:
 
     def is_point_inside(self, x, y, z):
         return (self.x - x) ** 2 + (self.y - y) ** 2 + (self.z - z) ** 2 < self.r ** 2
+
+    
+    
+    
+    # Долги
+# 31/10
+# Задача 1. дано три словаря. объединить данные словари в один
+
+d1 = {1: 10, 2: 20}
+d2 = {3: 30, 4: 40}
+d3 = {5: 50, 6: 60}
+d4 = d1 | d2 | d3
+print(d4)
+
+# Задача 2 Дан словарь. Измените значение зарплаты Бреда с 6500 на 8500.
+
+dict1 = {
+    'emp1': {'name': 'Jhon', 'salary': 7500},
+    'emp2': {'name': 'Emma', 'salary': 8000},
+    'emp3': {'name': 'Brad', 'salary': 6500}
+}
+lst = input("lst ")
+salary = input("salary ")
+print(dict1[lst][salary])
+num = input("numbers ")
+
+dict1[lst][salary] = num
+print(dict1[lst])
+
+# Задача 3 Пользователь вводит данные о кол-ве студентов: их фимилии, имена и балл. Программа должна определить средний балл и вывести фамилии и имена студентов, чей балл выше среднего.
+
+studs = {}
+n = int(input("Количество студентов: "))
+s = 0
+for i in range(n):
+    sname = input(str(i+1) + "-й студент: ")
+    point = int(input("Балл: "))
+    studs[sname] = point
+    s += point
+
+avrg = s / n
+print("\nСредний балл: %.0f. Студенты с баллом выше среднего:" % avrg)
+for i in studs:
+    if studs[i] > avrg:
+        print(i)
