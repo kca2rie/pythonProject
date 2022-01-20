@@ -707,3 +707,51 @@ class Convert:
         tc = (9 / 5) * y - 32
         return  tc
     print('t в цельсиях', tc, 'т в фаренгейтах', tf)
+    
+    
+# 15.01.2022
+# Создать класс Liquid со свойствами: название и плотность жидкости, - и методами: изменение плотности, вычисление объема жидкости, соответствующего заданной массе, вычисление массы жидкости, соответствующий заданному объему, вывод информации о жидкости.
+# Создать производный класс Alcohol с собственным свойством - крепость, - и методом: изменение крепости.
+
+class Liquid:
+    def __init__(self, name, density):
+        self.name = name
+        self.density = density
+
+    def edit_density(self, val):
+        self.density = val
+
+    def calc_v(self, m):
+        v = round(m / self.density, 2)
+        print(f'Объём {m} кг {self.name} равен {v} m^3.')
+        return v
+
+    def calc_m(self, v):
+        m = v * self.density
+        print(f'Вес {v} m^3 {self.name} составляет {m} кг.')
+        return m
+
+    def print_info(self):
+        print(f'Жидкость {self.name!r} (плотность = {self.density} kg/m^3).')
+
+class Alcohol(Liquid):
+    def __init__(self, name, density, strength):
+        super().__init__(name, density)
+        self.strength = strength
+
+    def edit_strength(self, val):
+            self.strength = val
+
+
+a = Alcohol('Wine', 1064.2, 14)
+a.print_info()
+a.edit_density(1000)
+a.print_info()
+print()
+a.calc_m(0.5)
+a.calc_v(300)
+print()
+print(a.strength)
+a.edit_strength(20)
+print(a.strength)
+
