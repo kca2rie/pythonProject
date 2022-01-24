@@ -755,6 +755,37 @@ print(a.strength)
 a.edit_strength(20)
 print(a.strength)
 
+# 16.01
+# Задача создайте базовый абстрактный класс Корень с методами вычисления корней уравнения и вывода результата на экран.
+# Реализуйте производные классы Линейное уравнение и Квадратное уравнение с собственными методами вычисления корней и вывода на экран.
+
+ from abc import ABC, abstractmethod
+
+ class Root(ABC):
+     def __init__(self, value):
+         self.value = value
+
+     @abstractmethod
+     def calculation_of_roots(self):
+         pass
+
+      def print_value(self):
+          print(self.value, end=" ")
+
+ class Linear(Root):
+     def calc1(self):
+         pass
+
+
+ class Square(Root):
+     def calc2(self):
+         pass
+
+ cl = Linear()
+ cl.calc1()
+ print()
+
+
 # 22.01
 #Задача.Создайте класс Student,который будет содержать имя и распечатывать информацию,а также вложенный класс, который будет содержать информацию о ноутбуке с техническими характеристиками: модель, процессор и память
 
