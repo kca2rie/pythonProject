@@ -755,3 +755,23 @@ print(a.strength)
 a.edit_strength(20)
 print(a.strength)
 
+# 22.01
+#Задача.Создайте класс Student,который будет содержать имя и распечатывать информацию,а также вложенный класс, который будет содержать информацию о ноутбуке с техническими характеристиками: модель, процессор и память
+
+from abc import ABC, abstractmethod
+
+
+class Student(ABC):
+    def __init__(self, name):
+        self.name = name
+
+    class Laptop:
+        def __init__(self, model, processor, memory):
+            self.model = model
+            self.processor = processor
+            self.memory = memory
+
+
+name = Student('Roman')
+laptop = name.Laptop('HP', 'i7', '16')
+print()
