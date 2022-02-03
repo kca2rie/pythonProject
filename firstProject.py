@@ -900,3 +900,99 @@ c1 = Clock(80000)
 print(c1.get_format_time())
 c1["hour"] = 10
 print(c1["hour"], c1["min"], c1["sec"])
+
+
+# 29/01
+# Задача создать класс Shape и три дочерних класса: Square, Rectangle, Triangle. Родительский класс должен иметь абстрактные методы нахождения периметра, площади, рисования фигуры и вывода информации. С помощью полиморфизма реализуйте вывод информации о дочерних фигурах
+import math
+from abc import ABC, abstractmethod
+
+
+class Shape(ABC):
+    def __init__(self, color):
+        self.color = color
+
+    def area(self):
+        pass
+
+    def perimeter(self):
+        pass
+
+    def __str__(self):
+        return self.color
+
+    def fig_info(self):
+        p = self.perimeter()
+        s = self.area()
+
+    @abstractmethod
+    def print_info(self):
+        raise NotImplementedError
+
+
+class Square(Shape):
+    def __init__(self, s):
+        super().__init__("Square")
+        self.s = s
+
+    def get_area(self):
+        return self.s**2
+
+    def get_perimeter(self):
+        perimeter = self.s * 4
+        return perimeter
+
+    def get_info(self):
+        p = self.get_perimeter()
+        s = self.get_area()
+        print(f'Периметр: {self.get_perimeter} площадь = {get_space}')
+
+
+class Rectangle(Shape):
+    def __init__(self, w, h):
+        super().__init__("Rectangle")
+        self.w = w
+        self.h = h
+
+    def get_perimeter(self):
+        perimeter = self.w * 2 + self.h * 2
+        return perimeter
+
+    def get_area(self):
+        area = self.w * self.h
+        return area
+
+    def get_info(self):
+        p = self.get_perimeter()
+        s = self.get_area()
+        print(f'Периметр: {self.get_perimeter} площадь = {get_space}')
+
+
+class Triangle(Shape):
+    def __init__(self, a, b, c,):
+        super().__init__("Triangle")
+        self.a = a
+        self.b = b
+        self.c = c
+
+    def get_perimeter(self):
+        perimeter = self.a + self.b + self.c
+        return perimeter
+
+    def get_area(self):
+        area = (self.a + self.b + self.c) * 0.5 * ((self.a + self.b + self.c) * 0.5 - self.a) - ((self.a + self.b + self.c) * 0.5 - self.b) - ((self.a + self.b + self.c) * 0.5 - self.c)
+        sqrt1 = math.sqrt(area)
+
+        def get_info(self):
+            p = self.get_perimeter()
+            s = self.get_area()
+            print(f'Периметр: {self.get_perimeter} площадь = {get_space}')
+
+
+if __name__ == '__main__':
+    fig1 = Square(3)
+    fig2 = Rectangle(3, 7)
+    fig3 = Triangle(11, 6, 6)
+    array = [fig1, fig2, fig3]
+    for f in array:
+        f.fig_info()
