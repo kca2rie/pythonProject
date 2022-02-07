@@ -996,3 +996,40 @@ if __name__ == '__main__':
     array = [fig1, fig2, fig3]
     for f in array:
         f.fig_info()
+
+                   
+# 30/01
+# Создать класс треугольник, свойства-длин всех сторон.Правильность задания свойств должны проверяться через дескриптон на ввод положительных целых числовых значений.Предусмотреть в классе методы проверки существоввания треугольника.
+
+class Figure:
+    @classmethod
+    def verify_side(cls, side):
+        if not isinstance(side, int) or side < 0:
+            raise TypeError(f"Сторона {side} должна быть целым положительным числом")
+
+    def __set_name__(self, owner, name):
+        self.name = name
+
+    def __get__(self, instance, owner):
+        return getattr(instance, self.name) # instance.__dict__[self.name]
+
+    def __set__(self, instance, value):
+        self.verify_side(value)
+        setattr(instance, self.name, value)
+
+
+class Triangle:
+    a = Figure()
+    b = Figure()
+    c = Figure()
+
+    def __init__(self, a, b, c):
+        self.a = a
+        self.b = b
+        self.c = c
+
+
+fig1 = Triangle(2, 5, 6)
+print(fig1)
+        
+     
