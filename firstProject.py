@@ -1068,4 +1068,34 @@ class Electric(Car):
 
     def __str__(self):
         print(f"Этот автомобиль имеет мощность 100%")
-     
+        
+                
+# 6.02
+
+import json
+
+dictionary ={
+    "1562358897": {
+        "name2": "bdbadbg",
+        "tel3": "3017067373"
+    },
+    "1563020871": {
+        "name2": "ebdedge",
+        "tel8": "8625723308"
+    },
+    "2869397933": {
+        "name1": "dbgeeff",
+        "tel9": "3453953075"
+    },
+    "5349167552": {
+        "name8": "bdfaade",
+        "tel7": "9694154763"
+    },
+    "7029491468": {
+        "name3": "gegegge",
+        "tel4": "3935195344"
+    }
+}
+
+json_object = json.dumps(dictionary, indent=4)
+print(json_object)
