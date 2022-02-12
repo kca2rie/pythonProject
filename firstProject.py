@@ -1031,5 +1031,41 @@ class Triangle:
 
 fig1 = Triangle(2, 5, 6)
 print(fig1)
-        
+
+
+
+# 5.02
+# Задача Создать класс Автомобиль со свойствами бренд, модель, год выпуска и пробег. Он будет иметь метод вывода данных на экран.
+# От него будет унаследован класс Электро автомобиль с мощностью батареи 100%. Работа с классами должна быть организована через пакет и модули.
+
+import pickle
+
+
+class Car:
+    a_brand = "Tesla"
+    a_model = "T"
+    a_year = "2018 год"
+    a_odometer = "99000 км"
+
+    def __str__(self):
+        return f"{Car.a_brand}\n" \
+               f"{Car.a_model}\n" \
+               f"{Car.a_year}\n" \
+               f"{Car.a_odometer}"
+
+
+obj = Car()
+
+my_obj = pickle.dumps(obj)
+print(f"{my_obj}")
+
+l_obj = pickle.loads(my_obj)
+print(f"{l_obj}\n")
+
+
+class Electric(Car):
+    a_power = "power"
+
+    def __str__(self):
+        print(f"Этот автомобиль имеет мощность 100%")
      
