@@ -1099,3 +1099,26 @@ dictionary ={
 
 json_object = json.dumps(dictionary, indent=4)
 print(json_object)
+
+
+# 13/01
+
+import requests
+from bs4 import BeautifulSoup
+
+url = "https://www.kinopoisk.ru/lists/top250/"
+r = requests.get(url)
+soup = BeautifulSoup(r.text, 'lxml')
+films = soup.findAll('div', class_='desktop-rating-selection-film-item')
+
+data = []
+
+for film in films:
+    link = "https://www.kinopoisk.ru"+film.find('a', classs_='selection-film-item-meta__link').get('href')
+    russian_name = film.find('a', class_='selection-film-item-meta__link').find('p', class_='selection-film-item-meta__russian-name').text
+    original_name = film.find('a', class_='selection-film-item-meta__link').find('p', class_='selection-film-item-meta__original-name').text
+    country = film.find('a', class_='selection-film-item-meta__link').find('span', class_='selection-film-item-meta__country').text
+    film_type = film.find('a', class_='selection-film-item-meta__link').findAll('span', class_='selection-film-item-meta__film-type').text
+    rate = film.find('span', class_='rating__value rating__value_positive').text
+
+    data.append([link, russian_name, original_name, country, film_type, rate])
