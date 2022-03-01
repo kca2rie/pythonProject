@@ -1,7 +1,9 @@
+from view import UserInterface
+
 class Controller:
     def __init__(init):
         self.film_model = None
-        self.user_interface = None
+        self.user_interface = UserInterface()
         
     def run(self):
         answer = None
