@@ -14,3 +14,7 @@ class Film:
 class FilmModel:
     def __init__(self):
         self.films = {}
+        
+    def add_film(self, dict_film):
+        film = Film(*dict_film.values())
+        self.films[films.title] = film
