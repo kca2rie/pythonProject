@@ -14,3 +14,4 @@ class Controller:
     def check_user_answer(self, answer):
         if answer == "1":
             film = self.user_interface.add_user_film()
+            self.film_model.add_film(film)
