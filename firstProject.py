@@ -1208,6 +1208,18 @@ class LinkedList:
             else:
                 current = current.get_next()
         return found
+    
+    def remove(self, item):
+        current = self.head
+        cur_pre = None
+        while current:
+            if current.item == item:
+                if current.item == item:
+                    self.head = current.next
+                else:
+                    cur_pre.next = current.next
+            cur_pre = current
+            current = current.next
 
 
 temp = LinkedList()
@@ -1224,4 +1236,5 @@ print(temp.size())
 temp.insert(3, 17)
 temp.list_print()
 print(temp.search(17))
+temp.remove(3)
 
