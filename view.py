@@ -41,3 +41,8 @@ class UserInterface:
     def show_all_films(self, films):
         for ind, film in enumerate(films, start=1):
             print(f"{ind}. {films}")
+            
+    @add_title('Ввод названия фильма:')
+    def get_user_film(self):
+        user_film = input("Введите название фильма: ")
+        return user_film
