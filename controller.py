@@ -22,5 +22,9 @@ class Controller:
             
         elif answer == "3":
             film_title = self.user_interface.get_user_film()
-            film = self.film_model.get_sibgle_film(film_title)
-            self.user_interface.show_single_film(film)
+            try:
+                film = self.film_model.get_sibgle_film(film_title)
+            except KeyError:
+                self.user_interface.show_incorrect_error(film_title)
+            else:
+                self.user_interface.show_single_film(film)
