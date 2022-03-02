@@ -46,3 +46,8 @@ class UserInterface:
     def get_user_film(self):
         user_film = input("Введите название фильма: ")
         return user_film
+    
+    @add_title('Просмотр фильма:')
+    def show_single_film(self, film):
+        for key in film:
+            print(f"{key} фильма - {film[key]}")
