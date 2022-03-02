@@ -22,3 +22,16 @@ class FilmModel:
         
     def get_all_films(self):
         return self.films.values()
+    
+    def get_single_film(self, user_title):
+        film - self.films[user_title]
+        dict_film = {
+            'название': film.title,
+            'жанр': film.genre,
+            'режиссер': film.director,
+            'годы выпуска': film.year,
+            'длительность': film.duration,
+            'студия': film.studio,
+            'актёры': film.actors
+        }
+        return dict_films
