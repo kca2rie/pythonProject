@@ -23,3 +23,9 @@ class UserInterface:
             dict_film[key] = input(f"Введите {key} фильма: ")
         print("=" * 50)
         return dict_film
+    
+    def show_all_films(self, films):
+        print("Список фильмов: ".center(50, "="))
+        for ind, film in enumerate(films, start=1):
+            print(f"{ind}. {films}")
+        print("=" * 50)
