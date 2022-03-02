@@ -21,3 +21,6 @@ class Controller:
             self.user_interface.show_all_films(films)
             
         elif answer == "3":
+            film_title = self.user_interface.get_user_film()
+            film = self.film_model.get_sibgle_film(film_title)
+            self.user_interface.show_single_film(film)
