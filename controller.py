@@ -15,3 +15,7 @@ class Controller:
         if answer == "1":
             film = self.user_interface.add_user_film()
             self.film_model.add_film(film)
+            
+        elif answer == "2":
+            films = self.film_model.get_all_films()
+            self.user_interface.show_all_films(films)
