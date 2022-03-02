@@ -11,10 +11,14 @@ class Film:
     def __str__(self):
         return f"{self.title} ({self.genre})"
         
-class Film Model:
+class FilmModel:
     def __init__(self):
         self.films = {}
         
     def add_film(self, dict_film):
         film = Film(*dict_film.values())
         self.films[films.title] = film
+        
+        
+    def get_all_films(self):
+        return self.films.values()
