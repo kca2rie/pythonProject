@@ -19,3 +19,5 @@ class Controller:
         elif answer == "2":
             films = self.film_model.get_all_films()
             self.user_interface.show_all_films(films)
+            
+        elif answer == "3":
