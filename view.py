@@ -54,4 +54,8 @@ class UserInterface:
             
     @add_title('Сообщение об ошибке:')
     def show_incorrect_error(self, user_title):
-        pritn(f"Фильм с названием {user_title} не существует")
+        print(f"Фильм с названием {user_title} не существует")
+    
+    @add_title('Удаление фильма:')
+    def remove_single_film(self, film):
+        print(f"Фильм {film} был удалён")
