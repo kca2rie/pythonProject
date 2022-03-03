@@ -51,3 +51,7 @@ class UserInterface:
     def show_single_film(self, film):
         for key in film:
             print(f"{key} фильма - {film[key]}")
+            
+    @add_title('Сообщение об ошибке:')
+    def show_incorrect_error(self, user_title):
+        pritn(f"Фильм с названием {user_title} не существует")
