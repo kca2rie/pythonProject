@@ -59,3 +59,7 @@ class UserInterface:
     @add_title('Удаление фильма:')
     def remove_single_film(self, film):
         print(f"Фильм {film} был удалён")
+        
+    @add_title('Сообщение об ошибке:')
+    def show_incorrect_answer_error(self, answer):
+        print(f"Вариан {answer} не существует")
