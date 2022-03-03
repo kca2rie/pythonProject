@@ -37,3 +37,9 @@ class Controller:
                     self.user_interface.show_incorrect_error(film_title)
                 else:
                     self.user_interface.remove_signle_film(title)
+                    
+        elif answer == "q":
+            self.film_model.save_data()
+            
+        else:
+            self.user_interface.show_incorrect_answer_error(answer)
