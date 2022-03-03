@@ -28,3 +28,12 @@ class Controller:
                 self.user_interface.show_incorrect_error(film_title)
             else:
                 self.user_interface.show_single_film(film)
+                
+        elif answer == "4":
+            film_title = self.user_interface.get_user_film()
+            try:
+                title = self.film_model.remove_film(film_title)
+                except KeyErroe:
+                    self.user_interface.show_incorrect_error(film_title)
+                else:
+                    self.user_interface.remove_signle_film(title)
