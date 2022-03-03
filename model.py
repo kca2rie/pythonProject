@@ -35,3 +35,6 @@ class FilmModel:
             'актёры': film.actors
         }
         return dict_films
+    
+    def remove_film(self, user_title):
+        returm self.films.pop(user_title)
