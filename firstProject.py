@@ -1238,3 +1238,23 @@ temp.list_print()
 print(temp.search(17))
 temp.remove(3)
 
+
+# 19.03
+
+from jinja2 import Template
+
+menu = [
+    {'id': 'index', 'point': 'Главная'},
+    {'id': 'news', 'point': 'Новости'},
+    {'id': 'about', 'point': 'О компании'},
+    {'id': 'shop', 'point': 'Магазин'},
+    {'id': 'contacts', 'point': 'Контакты'},
+]
+link = """<ul name="menu">
+{% for c in menu %}
+    <li values="{{ c['id] }}>{{ c['point'] }}</li>
+{% endfor %}
+</ul>"""
+
+tm = Template(link)
+msg = tm.render(point=point)
