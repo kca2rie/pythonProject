@@ -1258,3 +1258,11 @@ link = """<ul name="menu">
 
 tm = Template(link)
 msg = tm.render(point=point)
+
+
+# 28.11 Валидация номера телефона
+
+import re
+number = '74994564578'
+result = re.match(r'^(\+7|7|8)?[\s\-]?\(?[489][0-9]{2}\)?[\s\-]?[0-9]{3}[\s\-]?[0-9]{2}[\s\-]?[0-9]{2}$', number)
+print(bool(result))  
