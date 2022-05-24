@@ -1266,3 +1266,18 @@ import re
 number = '74994564578'
 result = re.match(r'^(\+7|7|8)?[\s\-]?\(?[489][0-9]{2}\)?[\s\-]?[0-9]{3}[\s\-]?[0-9]{2}[\s\-]?[0-9]{2}$', number)
 print(bool(result))  
+
+
+# Задача 2
+
+s = 'Text ABC 123 A1B2C3!'
+res = r"?<!\d)\d(?!\d"
+print(re.findall(res, s))
+
+s = 'text from #START# till #END#'
+res = r"?<=#START#).*?(?=#END#"
+print(re.findall(res, s))
+
+s = '12_34__56'
+res = r"\d+(?=_(?!_))"
+print(re.findall(res, s))
